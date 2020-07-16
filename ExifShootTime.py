@@ -4,6 +4,7 @@
 #   快捷修改照片的拍摄时间
 # 注意
 #   1. 需要安装第三方包: pip install python-dateutil
+#   2. 需要安装第三方包: pip install pypiwin32
 # external
 #   date       2020-07-15 15:56:21
 #   face       (~￣▽￣)~
@@ -13,6 +14,7 @@ import subprocess
 from dateutil.parser import parse
 from tkinter import *
 import tkinter.filedialog
+import win32gui
 
 # ================ 公共类\方法 ================
 def fetchUserDateTime():
@@ -40,6 +42,16 @@ def modifyShootTime(dateTime, filePathStr):
     sout, serr = child.communicate()
     print(sout)
     print(serr)
+    
+def setFocus(title):
+    if title == None:
+        return
+    def callback (hwnd, hwnds):
+        if win32gui.IsWindow(hwnd) and win32gui.IsWindowVisible(hwnd) and win32gui.IsWindowEnabled(hwnd):
+            if win32gui.GetWindowText(hwnd) == title:
+                win32gui.SetForegroundWindow(hwnd)
+                return 
+    win32gui.EnumWindows(callback, [])
 # ================ 公共类\方法 ================
 
 
@@ -47,6 +59,10 @@ def modifyShootTime(dateTime, filePathStr):
     
 # ================ 主逻辑 ================
 if __name__=="__main__":
+    title = "快捷修改照片的拍摄时间"
+    os.system("title " + title)
+
+
     # ---------------- 获取图片路径 ----------------
     picExts = [".png", ".jpg", ".jpeg", ".jfif", ".jpe", ".bmp", ".tiff", ".tif", ".gif"]
     print("您选择的文件是:")
@@ -69,8 +85,9 @@ if __name__=="__main__":
             filePath = filePaths[i]
             print("\t", filePath)
             filePathStr += '"' + filePath + '" '
+    setFocus(title)
     print("\n\n")
-       
+    
        
     # ---------------- 获取自定义日期 ----------------
     dateTime = fetchUserDateTime()

@@ -3,7 +3,7 @@
 
 
 ### 使用方法
-1. 双击ExifShootTime.py，选择照片，设置日期，确认参数后执行
+1. 双击ExifShootTime.py，在文件选择框中选择照片，设置日期，确认参数后执行
 2. 将照片拖到ExifShootTime.py上，设置日期，确认参数后执行
 
 
@@ -16,3 +16,4 @@
 
 ### 注意点
 1. 需要安装第三方包: pip install python-dateutil
+2. 需要安装第三方包: pip install pypiwin32
