@@ -1,3 +1,5 @@
+# 原作者：bjc5233
+
 # py-exif-shoot-time
 > 快捷修改照片的拍摄时间
 
@@ -17,3 +19,7 @@
 ### 注意点
 1. 需要安装第三方包: pip install python-dateutil
 2. 需要安装第三方包: pip install pypiwin32
+
+# 修改：
+## 1.0.0：
+在原作者的基础下修复一个BUG  
