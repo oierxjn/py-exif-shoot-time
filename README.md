@@ -1,7 +1,6 @@
-# 原作者：bjc5233
-[原](https://github.com/bjc5233/py-exif-shoot-time)
 # py-exif-shoot-time
-> 快捷修改照片的拍摄时间 批量修改照片拍摄日期
+> 快捷修改照片的拍摄时间
+
 
 ### 使用方法
 1. 双击ExifShootTime.py，在文件选择框中选择照片，设置日期，确认参数后执行
@@ -18,9 +17,3 @@
 ### 注意点
 1. 需要安装第三方包: pip install python-dateutil
 2. 需要安装第三方包: pip install pypiwin32
-
-# 修改：
-## 1.0.1
-修复了大部分BUG，除了某些时候无法聚焦到控制台窗口
-## 1.0.0
-在原作者的基础下修复一个BUG  
